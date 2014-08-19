@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sunshine</string>
+
+<!--    By convention, 'action' denotes that this String wi
+    typically from tha activity bar.  The activityBar is..-->
+
+    <string name="hello_world">Hello world !!!</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Menu label to fetch updated weather info from server -->
+    <string name="action_refresh" translatable="false">ReFresh</string>
+    <string name="title_activity_detail">Details</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!--Label for the location preference [CHAR LIMIT=30])-->
+    <string name="pref_location_label">Location</string>
+
+    <!--Label for storing location in SharePreferences [CHAR LIMIT=NONE])-->
+    <string name="pref_location_key" translation="false">location</string>
+
+    <!--Default postal code for location preference [CHAR_LIMIT=NONE]-->
+    <string name="pref_location_default" translation="false">94043</string>
+    >
+
+
+</resources>
