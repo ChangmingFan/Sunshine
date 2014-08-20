@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!-- Daniel, your Udacity coach, was here! Hi Changming. -->
     <string name="app_name">Sunshine</string>
 
 <!--    By convention, 'action' denotes that this String wi
