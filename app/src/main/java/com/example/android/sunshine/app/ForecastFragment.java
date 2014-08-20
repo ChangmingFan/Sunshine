@@ -81,6 +81,7 @@ public class ForecastFragment extends Fragment {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        // 081914 8PM github
         int id = item.getItemId();
         if (id == R.id.action_refresh) {
             //081914-357pm FetchWeatherTask weatherTask = new FetchWeatherTask();
