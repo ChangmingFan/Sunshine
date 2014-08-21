@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
+//private final String LOG_TAG = MainActivity.class.getSimpleName();
 
 public class MainActivity extends ActionBarActivity {
 

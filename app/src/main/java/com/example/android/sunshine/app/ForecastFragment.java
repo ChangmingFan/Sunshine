@@ -366,7 +366,7 @@ public class ForecastFragment extends Fragment {
                 // Log.v(LOG_TAG, "Forecast JSON String     : " + forecastJsonStr);
                 // 081614 Success ! UI OK now - after click Refresh  weadther data showed on my Huawei Android phone.
                 // Comment the above line - the logcat verbose will not show as it did successfuly-
-                //08-16 12:28:56.494    7780-7955/com.example.android.sunshine.app
+                // 08-16 12:28:56.494    7780-7955/com.example.android.sunshine.app
                 // V/FetchWeatherTask﹕ Forecast JSON String     :
                 // {"cod":"200","message":0.5747,"city":{"id":"5375480","name":"Mountain View","coord":{"lon":-122.075,
 
