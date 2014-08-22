@@ -11,7 +11,7 @@
     <string name="action_settings">Settings-Me-082014 0</string>
 
     <!-- Menu label to fetch updated weather info from server -->
-    <string name="action_refresh" translatable="false">ReFResh</string>
+    <string name="action_refresh" translatable="false">ReFREsh</string>
     <string name="title_activity_detail">Details</string>
     <string name="title_activity_settings">Settings</string>
     <string name="action_map">Map Location</string>
