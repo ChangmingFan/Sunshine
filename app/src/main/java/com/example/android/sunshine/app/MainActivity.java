@@ -10,10 +10,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
-//private final String LOG_TAG = MainActivity.class.getSimpleName();
-
 public class MainActivity extends ActionBarActivity {
+
+    private final String LOG_TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +46,15 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // 082114 1145PM
+    // In menu: main.xml, the map item will be inflated in the MainActivity class
+    // Next, by calling Helper method
+    // This is Helper method called open preferred location from shared preferences.
+    // Then we create a view intent, indicating it's location in the
+    // data URI. The format of the URI was from the documentation
+    // page on  common intents.
+    // Where you can append a postal code as a query parameter.
+    // see bellow "q"
     private void openPreferredLocationInMap() {
         SharedPreferences sharedPrefs =
                 PreferenceManager.getDefaultSharedPreferences(this);
@@ -58,8 +66,11 @@ public class MainActivity extends ActionBarActivity {
         // intent can is detailed in the "Common Intents" page
         // http://deveoler.android.com/guide/components/intent
         Uri geoLocation = Uri.parse("geo:0,0?").buildUpon()
+                .appendQueryParameter("q", location)
                 .build();
 
+        // Finally, we start an activity with this intent.
+        // Notice, only calling is succesfuly, this method will be used.
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(geoLocation);
 

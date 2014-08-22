@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.ShareActionProvider;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -12,11 +13,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ShareActionProvider;
 import android.widget.TextView;
 
 public class DetailActivity extends ActionBarActivity {
-    private final String LOG_TAG = ForecastFragment.class.getSimpleName();
+    private final String LOG_TAG = DetailActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,8 @@ public class DetailActivity extends ActionBarActivity {
     }
 
 
-    @Override
+    // 082114 10p
+    // @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.detail, menu);
@@ -72,14 +73,15 @@ public class DetailActivity extends ActionBarActivity {
             // The detail Activity called via intent, Inspect the intent for forecast data.
             Intent intent = getActivity().getIntent();
             if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)  ) {
-                String forecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
+                String mForecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
                 ((TextView) rootView.findViewById(R.id.detail_text))
-                    .setText(forecastStr);
+                    .setText(mForecastStr);
             }
             return rootView;
         }
 
-        @Override
+        // 082114 10pm
+        // @Override
         public void onCreateOptionMenu(Menu menu, MenuInflater inflater) {
             // Inflate the menu; this adds item to the action bar if it is pressed
             inflater.inflate(R.menu.detailfragment, menu);
