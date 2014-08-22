@@ -25,7 +25,6 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -43,6 +42,8 @@ public class MainActivity extends ActionBarActivity {
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
+       // 082214 5PM add this:
+
         if (id == R.id.action_map) {
             openPreferredLocationInMap();
             return true;
