@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.android.sunshine.app.DetailActivity" >
 
-    <item android:id="@+id/action_share"
-        android:icon="@drawable/ic_action_share"
-        android:title="@string/action_share"  />
-        android:showAsAction="ifRoom" />
-
-
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
         app:showAsAction="never" />
 </menu>
+<!--
+
+Let me commit 15th And add one line at detail,xml as Working with Amy-Udacity 0823141PM
+It' strange. for 2 pussels:
+    1. Why at github, all 4 cin-share not there as I see in my PC (in red-colr)?  
+    2:  Why you couldn.t see the new one. -->
