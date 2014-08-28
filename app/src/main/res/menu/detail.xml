@@ -3,17 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.android.sunshine.app.DetailActivity" >
 
+    <item android:id="@+id/action_share"
+        android:icon="@drawable/ic_action_share"
+        android:title="@string/action_share"  />
+        android:showAsAction="ifRoom" />
+
+
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
         app:showAsAction="never" />
 </menu>
-
-    <!--Just run again 082314 OK-->
-
-<!--
-    <item android:id="@+id/action_share"
-        android:icon="@drawable/ic_action_share"
-        android:title="@string/action_share"  />
-    android:showAsAction="ifRoom" />
--->

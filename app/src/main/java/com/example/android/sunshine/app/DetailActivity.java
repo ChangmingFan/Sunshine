@@ -30,8 +30,8 @@ public class DetailActivity extends ActionBarActivity {
     }
 
 
-    // 082114 10p
-    // @Override
+    // 082114 10p--
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.detail, menu);
