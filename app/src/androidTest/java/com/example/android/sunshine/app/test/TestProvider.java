@@ -1,5 +1,4 @@
 package com.example.android.sunshine.app.test;
-
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,6 +11,8 @@ import com.example.android.sunshine.app.data.WeatherDbHelper;
 
 import java.util.Map;
 import java.util.Set;
+
+//37 th commit 091014 4PM Test failed at testInsertReadProvider  to Amy Udacity
 
 public class TestProvider extends AndroidTestCase {
 
