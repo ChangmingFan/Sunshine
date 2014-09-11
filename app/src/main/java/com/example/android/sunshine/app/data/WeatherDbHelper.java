@@ -7,9 +7,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.example.android.sunshine.app.data.WeatherContract.LocationEntry;
 import com.example.android.sunshine.app.data.WeatherContract.WeatherEntry;
 
-/**
- * Manages a local database for weather data.
- */
 public class WeatherDbHelper extends SQLiteOpenHelper {
 
     // If you change the database schema, you must increment the database version.

@@ -1,5 +1,5 @@
 package com.example.android.sunshine.app.test;
-
+// ..
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -62,6 +62,7 @@ public class TestDb extends AndroidTestCase {
             locationRowId = db.insert(WeatherEntry.TABLE_NAME, null, values);
             assertTrue(locationRowId != -1);
         }
+
 
         ContentValues weatherValues = getWeatherContentValues(locationRowId);
 

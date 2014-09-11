@@ -11,9 +11,7 @@ import com.example.android.sunshine.app.data.WeatherDbHelper;
 
 import java.util.Map;
 import java.util.Set;
-
-//37 th commit 091014 4PM Test failed at testInsertReadProvider  to Amy Udacity
-
+// ..
 public class TestProvider extends AndroidTestCase {
 
     public static final String LOG_TAG = TestProvider.class.getSimpleName();
