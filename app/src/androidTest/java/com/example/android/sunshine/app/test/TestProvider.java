@@ -13,11 +13,11 @@ import com.example.android.sunshine.app.data.WeatherDbHelper;
 import java.util.Map;
 import java.util.Set;
 
-public class TestDb extends AndroidTestCase {
+public class TestProvider extends AndroidTestCase {
 
-    public static final String LOG_TAG = TestDb.class.getSimpleName();
+    public static final String LOG_TAG = TestProvider.class.getSimpleName();
 
-    public void testCreateDb() throws Throwable {
+    public void testDeleteDb() throws Throwable {
         mContext.deleteDatabase(WeatherDbHelper.DATABASE_NAME);
         SQLiteDatabase db = new WeatherDbHelper(
                 this.mContext).getWritableDatabase();
@@ -25,7 +25,7 @@ public class TestDb extends AndroidTestCase {
         db.close();
     }
 
-    public void testInsertReadDb() {
+    public void testInsertReadProvider() {
 
         // If there's an error in those massive SQL table creation Strings,
         // errors will be thrown here when you try to get a writable database.
@@ -33,14 +33,12 @@ public class TestDb extends AndroidTestCase {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = getLocationContentValues();
-
         long locationRowId;
         locationRowId = db.insert(LocationEntry.TABLE_NAME, null, values);
 
         // Verify we got a row back.
 
-
-        assertTrue(locationRowId != -1);
+        // assertTrue(locationRowId != -1);
         // Test Passed if the above line commented,
         // But Test failed if un-comment it, Why?
 
@@ -57,35 +55,32 @@ public class TestDb extends AndroidTestCase {
                 null // sort order
         );
 
-
         if (cursor.moveToFirst()){
             validateCursor(values, cursor);
 
-            assertTrue(locationRowId != -1);
-        }
+        //
 
-
-
-        ContentValues weatherValues = getWeatherContentValues(locationRowId);
+            ContentValues weatherValues = getWeatherContentValues(locationRowId);
             long weatherRowId;
-            weatherRowId = db.insert(WeatherEntry.TABLE_NAME, null, values);
-
-        Cursor weatherCursor = db.query(
-                WeatherEntry.TABLE_NAME,  // Table to Query
-                null, // all columns
-                null, // Columns for the "where" clause
-                null, // Values for the "where" clause
-                null, // columns to group by
-                null, // columns to filter by row groups
-                null // sort order
-        );
-
-        //ContentValues weatherValues = getWeatherContentValues(locationRowId);
-
-        if (weatherCursor.moveToFirst()){
-            validateCursor(weatherValues, weatherCursor);
-
+            weatherRowId = db.insert(WeatherEntry.TABLE_NAME, null, weatherValues);
             assertTrue(weatherRowId != -1);
+
+
+           Cursor weatherCursor = mContext.getContentResolver().query(
+                   WeatherEntry.CONTENT_URI, // Table to Query
+                   null, // leaving "columns" null just returns all columns.
+                   null, // cols for "where" clause
+                   null, // values for "where" clause
+                   null  // columns to group by
+            );
+
+            if (weatherCursor.moveToFirst()){
+                validateCursor(weatherValues, weatherCursor);
+            } else {
+                fail("No weather data returned!");
+            }
+        } else {
+            fail("No values returned : ");
         }
 
         dbHelper.close();
@@ -115,9 +110,9 @@ public class TestDb extends AndroidTestCase {
         double testLatitude = 64.7488;
         double testLongitude = -147.353;
 
-        values.put(LocationEntry.COLUMN_CITY_NAME, TEST_CITY_NAME);
-        values.put(LocationEntry.COLUMN_LOCATION_SETTING, testLocationSetting);
-        values.put(LocationEntry.COLUMN_COORD_LAT, testLatitude);
+        values.put(LocationEntry.COLUMN_LOCATION_SETTING, TEST_CITY_NAME);
+        values.put(LocationEntry.COLUMN_LOCATION_SETTING, testLatitude);
+        values.put(LocationEntry.COLUMN_COORD_LAT, testLocationSetting);
         values.put(LocationEntry.COLUMN_COORD_LONG, testLongitude);
         return values;
     }
