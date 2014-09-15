@@ -1,5 +1,5 @@
 package com.example.android.sunshine.app.test;
-
+// 091514  Test on TestProvider.java OK !!
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -110,9 +110,9 @@ public class TestProvider extends AndroidTestCase {
         double testLatitude = 64.7488;
         double testLongitude = -147.353;
 
-        values.put(LocationEntry.COLUMN_LOCATION_SETTING, TEST_CITY_NAME);
-        values.put(LocationEntry.COLUMN_LOCATION_SETTING, testLatitude);
-        values.put(LocationEntry.COLUMN_COORD_LAT, testLocationSetting);
+        values.put(LocationEntry.COLUMN_CITY_NAME, TEST_CITY_NAME);
+        values.put(LocationEntry.COLUMN_LOCATION_SETTING, testLocationSetting);
+        values.put(LocationEntry.COLUMN_COORD_LAT, testLatitude);
         values.put(LocationEntry.COLUMN_COORD_LONG, testLongitude);
         return values;
     }
